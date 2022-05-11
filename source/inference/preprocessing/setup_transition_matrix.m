@@ -1,5 +1,4 @@
 function A = setup_transition_matrix(ord,m)
-
 % Setup the transition matrix, which converts probabilities of multiple
 % photon emissions to probabilities of multiple photon detections using m
 % detectors

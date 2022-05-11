@@ -1,7 +1,7 @@
 function img = full_forward_simulation_cluster(n,p,lambda,psf,d,no_pulses)
 % Performs the full forward simulation for a single cluster located at one
 % pixel with n molecules of brightness p
-
+%
 % (c) Frank Werner, IMS Uni Göttingen, 03.01.2019 or later
 
 img = cell(d+1,1);

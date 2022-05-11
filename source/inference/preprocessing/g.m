@@ -6,7 +6,7 @@ function Q = g(s, lambda, params)
 % Q{k} is given by exp(-lambda) sum_{l=0}^k lambda^(k-l)/l!/(k-l)! sum_{j=0}^{ord-k} (-1)^j/j! S_{j+l}
 %
 % params.f(i) = (i-1)! (precomputed to save time)
-
+%
 % (c) Frank Werner, IMS Uni Göttingen, 03.01.2019 or later
 
 % Compute the S's

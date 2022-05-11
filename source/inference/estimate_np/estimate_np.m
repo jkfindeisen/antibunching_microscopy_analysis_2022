@@ -2,7 +2,7 @@ function [n,p,conf, iterations] = estimate_np(s,Sigma,segments,alpha,params)
 % Estimates the number of molecules in each of the sets under the
 % assumption that the brightness is constant inside each set.
 % Furthermore asymptotic confidence intervals at (uniform) level alpha are given
-
+%
 % INPUT:
 % s = cell with empirical measurements of (np) * k, (np^2) * k^2, ...
 % Sigma = cell of covariance matrices of the measurements (pixelwise)
@@ -14,13 +14,13 @@ function [n,p,conf, iterations] = estimate_np(s,Sigma,segments,alpha,params)
 %       mc = number of s's used for counting
 %       FWHM_CONF = full width at half maximum in pixels for confocal experiment
 %       tol_counting = tolerance for Newton iteration
-
+%
 % OUTPUT:
 % n = estimated number of molecules in the sets (as cell)
 % p = estimated brightness of molecules in the sets (as cell)
 % conf = confidence radius at level alpha for number of molecules in the sets (as cell)
 % iterations = number of iterations (-1 if the Newton method did not converge and the initial guess was used)
-
+%
 % (c) Frank Werner, IMS Uni Göttingen, 25.02.2019 or later
 
 ord = min(length(s),params.mc);

@@ -1,4 +1,5 @@
 function [k, otf] = generate_psf(n, b, a)
+% Generates a special type of PSF
 
 assert(nargin == 3, 'Not enough arguments');
 

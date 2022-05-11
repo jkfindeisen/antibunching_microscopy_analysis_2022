@@ -1,15 +1,13 @@
 function [segments,n,p,conf,aux] = estimate_molecular_map(data,params,Psi,alpha)
 % Main function to estimate the molecular map from data
-
-% (c) Frank Werner, IMS Uni Göttingen, 25.02.2019 or later
-
-% INPUTS: 
+%
+% INPUTS:
 % data --> struct containing the fields
 %       Y_STED --> antibunching images from STED experiment
 %       Y_CONF --> antibunching images from confocal experiment
 %       t_STED --> dwell time in STED experiment
 %       t_CONF --> dwell time in confocal experiment
-% params --> struct containing the fields 
+% params --> struct containing the fields
 %       FWHM_STED --> full width at half maximum in pixels for STED experiment
 %       FWHM_CONF --> full width at half maximum in pixels for confocal experiment
 %       a --> shape parameter a for approximate STED psf (precomputed)
@@ -30,13 +28,15 @@ function [segments,n,p,conf,aux] = estimate_molecular_map(data,params,Psi,alpha)
 %       no_neighboring_px --> number of neighboring pixels used for counting (DEFAULT: FWHMP_CONF)
 % Psi --> filename of test used for multiscale location (or [] if unknown)
 % alpha --> final error level (1-alpha is the final confidence level)
-
+%
 % OUTPUTS:
 % segments --> regions containing markers with uniform prob >= 1-alpha
 % n --> estimated number of markers in the segments
 % p --> estimated brightness of markers in the segments
 % conf --> confidence interval for number of markers in the segments, coverage >= 1-alpha
 % aux --> further information for debugging
+%
+% (c) Frank Werner, IMS Uni Göttingen, 25.02.2019 or later
 
 %% Set default values
 if ~isfield(params,'md')
@@ -102,13 +102,13 @@ if isempty(Psi) || Psi.n ~= size(Y_STED{1},1) + 2*pad_STED || Psi.n ~= size(Y_ST
     % In this case, no test has been specified, or the one specified does
     % not apply. We have to generate a new one.
     hset = generate_set_of_scales(ceil(params.FWHM_STED/2),4*params.FWHM_STED,2);
-%     hset = generate_set_of_scales(ceil(params.FWHM_STED),3*params.FWHM_STED,2);
+    %     hset = generate_set_of_scales(ceil(params.FWHM_STED),3*params.FWHM_STED,2);
     [k,otf] = generate_psf(size(Y_STED{1},1) + 2*pad_STED,params.b,params.a);
     kernel_params.k = k;
     kernel_params.a = params.a;
     kernel_params.b = params.b;
     Psi = setup_test(size(Y_STED{1},1) + 2*pad_STED,kernel_params,otf,[2*params.a,2*params.a],hset,['test_',datestr(clock,'yyyy-mmm-dd_HH-MM-SS'),'.mat']);
-    Psi = simulate_gaussian_approximation(Psi.filename,1e3);    
+    Psi = simulate_gaussian_approximation(Psi.filename,1e3);
 end
 fprintf('...done!\n');
 

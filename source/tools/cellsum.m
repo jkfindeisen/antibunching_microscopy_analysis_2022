@@ -1,7 +1,6 @@
-% s=cellsum(co,ct)
-% sum up two cells or all elements of once cell array
-% it works iteratively and, therefore, can sum up cells with same level of
-% subcells.
+function s=cellsum(co,ct)
+% Sum up two cells or all elements of once cell array it works iteratively
+% and, therefore, can sum up cells with same level of subcells.
 % 
 % co: cell with numbers as the lowest level
 % ct: cell with numbers as the lowest level
@@ -16,7 +15,6 @@
 % 
 % Haisen Ta 20120611 @ goettingen
 
-function s=cellsum(co,ct)
 assert(nargin>0 && nargin<3,'invalid number of inputs!');
 if nargin<2
    s=co{1};

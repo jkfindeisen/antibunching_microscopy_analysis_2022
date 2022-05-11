@@ -1,20 +1,7 @@
 function res = plot_molecular_map(segmentation,br,conf,alpha)
 % Plot results
-
+%
 % (c) Frank Werner, IMS Uni Göttingen, 03.01.2019 or later
-
-%assert(nargin == 10, 'Not enough arguments');
-
-% n = size(Y,1);
-% 
-% % Plot Data
-% 
-% figure('Position', scrsz);
-% 
-% imagesc(Y);
-% axis square;
-% colorbar;
-% title('Data');
 
 % Plot segments, counted numbers and uncertainty
 

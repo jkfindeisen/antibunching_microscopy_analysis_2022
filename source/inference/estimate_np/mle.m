@@ -2,7 +2,7 @@ function [n,p,Cov,it] = mle(Y,Sigma,W,k,maxit,tol, pmin)
 % Computes maximum likelihood estimator according to the likelihood
 % l(n,p,Y) = 1/2 (F(n,p) - Y)^T W (F(n,p) - Y)
 % where F(n,p) = (n*p, n*p^2, ... n^p^k)
-
+%
 % INPUT:
 % Y = data
 % Sigma = covariance matrix of data
@@ -10,13 +10,13 @@ function [n,p,Cov,it] = mle(Y,Sigma,W,k,maxit,tol, pmin)
 % k = order up to which data in Y is used
 % maxit = maximal number of Newton iterations
 % tol = tolerance for Newton iteration
-
+%
 % OUTPUT:
 % n = estimated number
 % p = estimated brightness
 % Cov = covariance matrix of estimators
 % it = number of Newton iterations (-1 if the Newton method did not converge and the initial guess was used)
-
+%
 % (c) Frank Werner, IMS Uni Göttingen, 25.02.2019 or later
 
 if nargin < 7

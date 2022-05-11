@@ -1,16 +1,16 @@
 function segments = boxes_to_segments(Y,Bnp,hset,pad,options)
 % Converts boxes obtained by MISCAT to segments using the Watershed
 % segmentation algorithm to obtain more natural segments
-
+%
 % INPUT:
 % Y = unpadded data used for MISCAT
 % Bnp = cell with rejections of the MISCAT algorithm
 % hset = cell of used scales for MISCAT
 % pad = padding used for MISCAT to avoind boundary effects
-
+%
 % OUTPUT:
 % segments = segmentation of the image
-
+%
 % (c) Frank Werner, IMS Uni Göttingen, 03.01.2019 or later
 
 %% First generate a watershed segmentation of the image

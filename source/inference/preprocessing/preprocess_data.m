@@ -16,7 +16,7 @@ function [s,Cov,it] = preprocess_data(Y,t,lambda,params)
 %       tol_preprocessing --> Relative tolerance for Newton's method for preprocessing
 % s - convolution images
 % Cov - estimated covariance matrix of the output
-
+%
 % (c) Frank Werner, IMS Uni Göttingen, 25.02.2019 or later
 
 % Check consistency

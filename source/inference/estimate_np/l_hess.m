@@ -1,15 +1,15 @@
 function hess = l_hess(x,Y,W,ord)
 % Computes the hessian of the likelihood function
-
+%
 % INPUT:
 % x = 2x1-vector with entries n (number of markers) and p (brightness of markers)
 % W = weighting matrix
 % Y = data
 % ord =  order up to which data in Y is used
-
+%
 % OUTPUT:
 % hess = hessian
-
+%
 % (c) Frank Werner, IMS Uni Göttingen, 25.02.2019 or later
 
 tmp = x(1) * x(2).^(1:ord)';

@@ -2,7 +2,7 @@ function Th = mean_values_fixed_scale(Y,Phi,n,h)
 % Computes the single-scale statistic
 % Th (t) = sum_{i} Y_{i} Phi_h(p_{i}-t)
 % for all t in {1,...,n}^d
-
+%
 % The argument Phi has already been rotated by 180 degrees, continued
 % periodically and fftd. Consequently, the above sum is a convolution, and
 % Th = ifftn(Y.*Phi);

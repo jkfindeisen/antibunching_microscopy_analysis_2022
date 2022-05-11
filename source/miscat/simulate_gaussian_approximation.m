@@ -1,4 +1,5 @@
 function Psi = simulate_gaussian_approximation(filename, number_runs)
+%
 
 assert(nargin >= 1, 'Not enough arguments');
 if nargin < 2

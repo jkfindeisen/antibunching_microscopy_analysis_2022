@@ -1,4 +1,5 @@
 function res = wh(h,C)
+%
 
 assert(nargin == 2, 'Not enough arguments');
 

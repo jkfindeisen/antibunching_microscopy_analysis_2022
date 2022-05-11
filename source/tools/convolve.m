@@ -1,6 +1,6 @@
-function res = convolve(f,otf)
-% performs periodic convolution with already FFTd kernel
+function res = convolve(f, otf)
+% Performs periodic convolution with already FFT-ed kernel
 
-res = ifft2(fft2(f) .* fftshift(otf));
+res = ifftn(fftn(f) .* fftshift(otf));
 
 end

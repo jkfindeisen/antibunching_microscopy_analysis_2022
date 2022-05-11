@@ -1,16 +1,6 @@
-% function k = sim_psf(Np, fwhmp)
-% % returns unnormalized psfs
-% %   fwhmp   fwhm of kernel in pixels
-% %   Np  total number of pixels (here 2*Np+1)
-%
-% assert(nargin >=2,'Not enough arguments!');
-%
-% [X, Y] = ndgrid(-Np:Np, -Np:Np);
-% k = power(2., -(X.^2+Y.^2) / (fwhmp / 2)^2);
-% end
-
 function k = gaussian(N, fwhmp)
-% returns unnormalized psfs in 2D or 3D
+% Returns unnormalized Gaussian PSFs in 2D or 3D
+%
 %   fwhmp   FWHM of kernel in pixels
 %   N       total number of pixels
 

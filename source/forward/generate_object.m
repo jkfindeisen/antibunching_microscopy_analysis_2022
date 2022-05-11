@@ -114,8 +114,6 @@ switch p.type
         error('Unknown type');
 end
 
-
-
 end
 
 function [object] = clear_border(object, D)

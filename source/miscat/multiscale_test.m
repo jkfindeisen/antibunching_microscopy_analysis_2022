@@ -6,7 +6,7 @@ function Bnp = multiscale_test(Y, Psi, dist_params, alpha)
 % dist_params   struct containing the data distribution parameters
 % alpha         the level, i.e. we ensure (asymptotically) that in
 %               100*(1-alpha)% there are no false positives
-
+%
 % (c) Frank Werner, IMS Uni Göttingen, 03.01.2019 or later
 
 assert(nargin == 4, 'Not enough arguments');

@@ -1,6 +1,6 @@
 function Bnp = reduce_complexity(Bnp, hset)
 % Reduces complexity by discarding all boxes with contain smaller ones
-
+%
 % (c) Frank Werner, IMS Uni Göttingen, 03.01.2019 or later
 
 assert(nargin == 2, 'Not enough arguments');

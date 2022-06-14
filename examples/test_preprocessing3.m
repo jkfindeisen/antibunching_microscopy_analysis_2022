@@ -230,7 +230,7 @@ function test_it(n, p, t, order, method, method_p, repetitions)
 
 lambda = 0;
 L = 9;
-psf = Gaussian([L L],4);
+psf = gaussian([L L],4);
 object = zeros(L, L);
 object(5,5) = n;
 

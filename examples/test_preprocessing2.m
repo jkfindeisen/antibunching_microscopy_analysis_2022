@@ -40,7 +40,7 @@ end
 disp(truth);
 
 Y = full_forward_simulation(object, p, lambda, psf, params.md, t, rng_seed);
-[S_me,Cov] = preprocess_data2(Y,t,lambda*ones(32,32)*t,params);
+[S_me,Cov] = preprocess_data(Y,t,lambda*ones(32,32)*t,params);
 for j=1:params.ms
     s_me(j)= sum(sum(S_me{j}));
 end

@@ -1,8 +1,7 @@
+function test_estimate_np()
 % Tests the estimation algorithm by checking mean and distribution
-close all;
-clear all;
 
-init;
+close all;
 
 no_trials = 10000;
 
@@ -48,7 +47,7 @@ clear bar;
 
 fprintf('Empirical type 1 error is %3.2f%%\n',sum(type1)/no_trials*100);
 
-figure(); 
+figure();
 subplot(1,3,1)
 histogram(nhat)
 title('errors in estimating n')
@@ -60,3 +59,5 @@ title('errors in estimating p')
 subplot(1,3,3)
 histogram(it)
 title('number of Newton iterations')
+
+end

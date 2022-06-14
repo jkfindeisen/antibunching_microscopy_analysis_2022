@@ -1,8 +1,6 @@
+function ddd()
 % Tests the mle algorithm by checking mean and distribution
 close all;
-clear all;
-
-init;
 
 no_trials = 1000;
 
@@ -35,14 +33,14 @@ bar.close();
 clear bar;
 
 % Covariance
-W = zeros(2,2); 
-for i=1:no_trials 
-    W = W+Cov{i}; 
+W = zeros(2,2);
+for i=1:no_trials
+    W = W+Cov{i};
 end
 W = W/no_trials;
 s = sqrt(diag(W));
 
-figure(); 
+figure();
 subplot(1,3,1)
 data = nhat;
 histogram(data,'Normalization','pdf')
@@ -68,3 +66,5 @@ hold off;
 subplot(1,3,3)
 histogram(it)
 title('number of Newton iterations')
+
+end

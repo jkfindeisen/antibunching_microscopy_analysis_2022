@@ -7,7 +7,7 @@ n= 20;
 p = 0.02;
 lambda = 0;
 L = 32;
-h = Gaussian([L L],8);
+h = gaussian([L L],8);
 
 no_pulses = 1e3;
 params.md=4;  %number of detectors used for measurements
@@ -74,6 +74,6 @@ for i = 1 : 4
     title(sprintf('%d-th order, <rel.err.>=%.2f, [15%%,85%%]=[%.2f,%.2f]', i, mean(data), quantile(data, [0.15, 0.85])));
     xlabel('rel. error');
 end
-%saveas(fig, 'test_preprocessing.tif');
+
 
 end

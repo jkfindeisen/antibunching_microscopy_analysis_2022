@@ -101,10 +101,10 @@ title(sprintf('%d segments, confidence hits=%.2f', numel(conf), mean(hit)));
 
 
 % write to files
-img_write_tiff(flip(filaments, 1), 'fil-example_filaments.tif');
-img_write_tiff(flip(data.Y_STED{2}, 1), 'fil-example_sted1.tif', 'hot');
-img_write_tiff(flip(data.Y_CONF{2}, 1), 'fil-example_conf1.tif', 'hot');
-img_write_tiff(flip(data.Y_CONF{3}, 1), 'fil-example_conf2.tif', 'hot');
+imwrite_tiff(flip(filaments, 1), 'fil-example_filaments.tif');
+imwrite_tiff(flip(data.Y_STED{2}, 1), 'fil-example_sted1.tif', 'hot');
+imwrite_tiff(flip(data.Y_CONF{2}, 1), 'fil-example_conf1.tif', 'hot');
+imwrite_tiff(flip(data.Y_CONF{3}, 1), 'fil-example_conf2.tif', 'hot');
 f = figure('units','normalized','outerposition',[0 0 1 1]);
 imagesc(flip(segments,1));
 axis image;

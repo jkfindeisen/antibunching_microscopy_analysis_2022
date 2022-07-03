@@ -1,9 +1,13 @@
-function res = plot_molecular_map(segmentation,br,conf,alpha)
+function res = plot_molecular_map(segmentation,br,conf,alpha,n_true)
 % Plot results
 %
 % (c) Frank Werner, IMS Uni Göttingen, 03.01.2019 or later
 
 % Plot segments, counted numbers and uncertainty
+
+if nargin < 5
+    n_true = [];
+end
 
 scrsz = get(0,'ScreenSize');
 figure('Position', scrsz);
@@ -26,13 +30,14 @@ for i=1:max(max(segmentation))
     % Compute center of mass of set{i}
     tmp = regionprops(segmentation==i,'Centroid');
     center = tmp.Centroid;
-    text(center(1)-5,center(2)-2,['\bf[',num2str(conf{i}(1)),',',num2str(conf{i}(2)),']']);
-%     if nargin==10
-%         if conf{i}(1) <= N_true(i) && N_true(i) <= conf{i}(2)
-%             text(center(1)-1,center(2)+2,num2str(N_true(i)));
-%         else
-%             text(center(1)-1,center(2)+2,num2str(N_true(i)),'Color','r');
-%         end
-%     end
+    if ~isempty(n_true)
+        if conf{i}(1) <= n_true(i) && n_true(i) <= conf{i}(2)
+            text(center(1)-5,center(2)-2, sprintf('\\bf[%d, %d]: %d', conf{i}, n_true(i)));
+        else
+            text(center(1)-5,center(2)-2, sprintf('\\bf[%d, %d]: %d', conf{i}, n_true(i)),'Color','r');
+        end
+    else
+        text(center(1)-5,center(2)-2, sprintf('\\bf[%d, %d]', conf{i}));
+    end
 end
 

@@ -1,4 +1,4 @@
-function test_cell_example2()
+function example_cell_dummy2()
 % tests the cell example, only the analysis
 
 %% load cell example
@@ -67,7 +67,7 @@ toc(t);
 
 %% estimate molecular map
 alpha = 0.1;
-load('miscate/test_cell_dummy.mat'); %Psi = []; % % need to compute a new test before
+load('miscat/test_cell_dummy.mat'); %Psi = []; % % need to compute a new test before
 params.lambda = lambda;
 params.a = 2; % matched by hand
 params.b = 0.031;

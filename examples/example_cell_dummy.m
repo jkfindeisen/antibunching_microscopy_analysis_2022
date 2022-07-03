@@ -43,7 +43,7 @@ axis image;
 
 %% general parameters
 p = 0.02;
-params.md = 4; 
+params.md = 4;
 data.t_STED = 1e3;
 data.t_CONF = 3e2;
 
@@ -79,33 +79,15 @@ show_results(data.Y_CONF, data.Y_STED, object, cell);
 
 %% estimate molecular map
 alpha = 0.1;
-load('miscate/test_cell_dummy.mat'); %Psi = []; % % need to compute a new test before
+load('miscat/test_cell_dummy.mat'); %Psi = []; % % need to compute a new test before
 % Psi = [];
 params.lambda = lambda;
 params.a = 2; %matched by hand
 params.b = 0.031;
 t = tic();
-% [segments, n, p, conf, aux] = estimate_molecular_map(data,params,[],alpha);
 [segments, n, p, conf, aux] = estimate_molecular_map(data,params,Psi,alpha);
 % "Making the segmentation valid......done!" - takes very long
 toc(t);
-
-fig = figure();
-hold on;
-axis off;
-box on;
-seg = d.watershed;
-Nseg = double(max(seg(:)));
-cm = jet(Nseg);
-for i = 1 : Nseg
-    B = bwboundaries(seg == i, 'noholes');
-    B = B{1};
-    patch(B(:, 2), -B(:, 1), cm(i, :), 'EdgeColor', 'k')
-end
-xlim([1, size(seg, 2)]);
-ylim([-size(seg, 1), -1]);
-pbaspect([1,1,1]);
-exportgraphics(fig, 'cell_watershed.emf');
 
 fig = figure();
 hold on;
@@ -143,8 +125,8 @@ cm = parula(1000);
 for i = 1 : N
     b = boxes(i, :);
     ci = floor((a(i) - R(2))/(R(1)-R(2))*999)+1;
-%     c = floor(cm(ci, :)*255);
-c = cm(ci, :);
+    %     c = floor(cm(ci, :)*255);
+    c = cm(ci, :);
     patch(b([2, 2, 4, 4, 2]), -b([1,3,3,1,1]), c, 'EdgeColor', 'k');
 end
 xlim([1, size(seg, 2)]);
@@ -158,13 +140,13 @@ exportgraphics(fig, 'cell_boxes.emf');
 % cm = jet(255);
 % cm(1, :) = [1,1,1];
 % imwrite(A, cm, 'cell_watershed.png');
-% 
+%
 % A = double(d.segmentation);
 % A = uint8(A / max(A(:)) * 255);
 % cm = jet(255);
 % cm(1, :) = [1,1,1];
 % imwrite(A, cm, 'cell_segmentation.png');
-% 
+%
 
 N = size(d.boxes, 1);
 A = zeros([size(d.segmentation), 3], 'uint8') + 255; % white at the beginning
@@ -230,7 +212,7 @@ for i = 1 : numel(conf)
     xc = sum(xi(:) .* seg(:)) ./ sum(seg(:));
     yc = sum(yi(:) .* seg(:)) ./ sum(seg(:));
     no = sum(object(seg));
-%     text(yc, xc, sprintf('%d (%d,%d)', no, conf{i}), 'HorizontalAlignment', 'center');
+    %     text(yc, xc, sprintf('%d (%d,%d)', no, conf{i}), 'HorizontalAlignment', 'center');
     text(yc, xc, sprintf('%d', no), 'HorizontalAlignment', 'center', 'FontSize', 14);
     if no >= conf{i}(1) && no <= conf{i}(2)
         hit(i) = 1;

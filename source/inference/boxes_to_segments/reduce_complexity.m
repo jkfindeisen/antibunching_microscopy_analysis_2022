@@ -17,7 +17,7 @@ end
 no_boxes = 0;
 for i=1:numel(hset)
     current_size = hset{i}; % box size
-    % smaller boxes
+    % smaller boxes (not larger and smaller in at least one dimension)
     I = (boxes(:,3) <= current_size(1) & boxes(:,4) <= current_size(2)) & (boxes(:,3) < current_size(1) | boxes(:,4) < current_size(2));
     smaller_boxes = boxes(I, :);
     current_boxes = Bnp{i}; % boxes of this size
@@ -39,5 +39,4 @@ for i=1:numel(hset)
 end
 
 fprintf('...done!\n --> %i boxes left\n',no_boxes);
-
 end

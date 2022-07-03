@@ -2,11 +2,11 @@ function example_single_cluster()
 % analyses synthetic data, simulation of a single cluster
 
 close all;
-fprintf('Will analyze and simulated single cluster data. May take a while!\n');
+fprintf('Simulate and analyze single cluster data.\n');
 
 %% simulation parameters
 lambda = 0.01;
-n = 10;
+n_true = 10;
 p = 0.02;
 no_channels = 4;
 no_pulses = 1e3;
@@ -15,10 +15,10 @@ no_pulses = 1e3;
 
 % Confocal
 h  = gaussian([128,128],23);
-Y_CONF = full_forward_simulation_cluster(n,p,lambda,h,no_channels,no_pulses);
+Y_CONF = full_forward_simulation_cluster(n_true,p,lambda,h,no_channels,no_pulses);
 % STED
 h  = gaussian([128,128],7);
-Y_STED = full_forward_simulation_cluster(n,p,lambda,h,no_channels,no_pulses);
+Y_STED = full_forward_simulation_cluster(n_true,p,lambda,h,no_channels,no_pulses);
 
 data.Y_CONF = Y_CONF;
 data.Y_STED = Y_STED;
@@ -43,9 +43,9 @@ alpha = 0.1;
 load('miscat/test_single_cluster.mat');
 
 %% estimate molecular map
-[segments,n,p,conf,aux] = estimate_molecular_map(data,params,Psi,alpha);
+[segments,n_est,p,conf,aux] = estimate_molecular_map(data,params,Psi,alpha);
 
 %% plot molecular map
-plot_molecular_map(segments,p,conf,alpha);
+plot_molecular_map(segments,p,conf,alpha,n_true);
 
 end

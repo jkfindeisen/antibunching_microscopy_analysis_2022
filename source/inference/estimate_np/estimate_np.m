@@ -20,8 +20,6 @@ function [n,p,conf, iterations] = estimate_np(s,Sigma,segments,alpha,params)
 % p = estimated brightness of molecules in the sets (as cell)
 % conf = confidence radius at level alpha for number of molecules in the sets (as cell)
 % iterations = number of iterations (-1 if the Newton method did not converge and the initial guess was used)
-%
-% (c) Frank Werner, IMS Uni Göttingen, 25.02.2019 or later
 
 ord = min(length(s),params.mc);
 

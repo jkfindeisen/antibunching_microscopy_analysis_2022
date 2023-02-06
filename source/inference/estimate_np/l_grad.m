@@ -9,8 +9,6 @@ function grad = l_grad(x,Y,W,ord)
 %
 % OUTPUT:
 % grad = gradient
-%
-% (c) Frank Werner, IMS Uni Göttingen, 25.02.2019 or later
 
 tmp = x(1) * x(2).^(1:ord)';
 

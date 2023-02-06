@@ -35,8 +35,6 @@ function [segments,n,p,conf,aux] = estimate_molecular_map(data,params,Psi,alpha)
 % p --> estimated brightness of markers in the segments
 % conf --> confidence interval for number of markers in the segments, coverage >= 1-alpha
 % aux --> further information for debugging
-%
-% (c) Frank Werner, IMS Uni Göttingen, 25.02.2019 or later
 
 %% Set default values
 if ~isfield(params,'md')

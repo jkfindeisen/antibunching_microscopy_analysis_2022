@@ -30,8 +30,6 @@ function segmentation = make_segmentation_valid(boxes,segmentation)
 % segment is stored. Those are then solved iteratively by always creating
 % the smallest possible joint segment.
 % Finally, the values in segmentation have to be adjusted
-%
-% (c) Frank Werner, IMS Uni Göttingen, 03.01.2019 or later
 
 fprintf('Making the segmentation valid...');
 

@@ -4,8 +4,6 @@ function dQ = dgds(s, lambda, params)
 % w.r.t s
 %
 % params.f(i) = (i-1)! (precomputed to save time)
-%
-% (c) Frank Werner, IMS Uni Göttingen, 03.01.2019 or later
 
 % Compute the S's
 S = zeros(params.max+1,1);

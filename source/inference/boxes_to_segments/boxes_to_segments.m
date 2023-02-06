@@ -10,8 +10,6 @@ function segments = boxes_to_segments(Y,Bnp,hset,pad,options)
 %
 % OUTPUT:
 % segments = segmentation of the image
-%
-% (c) Frank Werner, IMS Uni Göttingen, 03.01.2019 or later
 
 %% First generate a watershed segmentation of the image
 % first smooth the image

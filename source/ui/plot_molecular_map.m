@@ -1,7 +1,5 @@
 function res = plot_molecular_map(segmentation,br,conf,alpha,n_true)
 % Plot results
-%
-% (c) Frank Werner, IMS Uni Göttingen, 03.01.2019 or later
 
 % Plot segments, counted numbers and uncertainty
 

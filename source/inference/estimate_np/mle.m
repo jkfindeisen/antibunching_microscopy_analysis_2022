@@ -16,8 +16,6 @@ function [n,p,Cov,it] = mle(Y,Sigma,W,k,maxit,tol, pmin)
 % p = estimated brightness
 % Cov = covariance matrix of estimators
 % it = number of Newton iterations (-1 if the Newton method did not converge and the initial guess was used)
-%
-% (c) Frank Werner, IMS Uni Göttingen, 25.02.2019 or later
 
 if nargin < 7
     pmin = 0.001;

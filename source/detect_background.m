@@ -9,8 +9,6 @@ function background = detect_background(image, feature_size)
 % That means:
 %   - peaks in the data are nicely preserved
 %   - homogeneous areas in the data will mistakenly identified as background
-%
-% Jan Keller-Findeisen (jan.keller@mpibpc.mpg.de)
 
 assert(nargin == 2, 'Not enough arguments');
 image = double(image);

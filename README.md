@@ -1,13 +1,5 @@
 # Software package and datasets for "Towards quantitative super-resolution microscopy: Molecular maps with statistical guarantees"
 
-by Katharina Proksch, Frank Werner, Jan Keller-Findeisen, Haisen Ta and Axel Munk
-
-University Würzburg, University Twente, University Göttingen, University Hamburg,
-Max Planck Institute for multidisciplinary Sciences, DFG Cluster of Excellence 2067
-“Multiscale Bioimaging: From Molecular Machines to Networksof Excitable Cells”
-
-to appear in a peer reviewed journal
-
 ## System requirements and code license
 
 This software package contains examplary data, pre-computed MISCAT tests and
@@ -17,8 +9,6 @@ It has been successfully tested with Matlab R2020b.
 The source code of the software is licensed under the MIT license (see file LICENSE).
 
 The data is provided for academic and visualization purposes only.
-
-Major authors of the code are Frank Werner and Jan Keller-Findeisen
 
 ## Setup
 
@@ -36,10 +26,3 @@ Call examples/example_xxx.m to see the software estimating a hybrid segmentation
 ## Usage
 
 Make sure to run initialize.m at least once. 
-
-## Data description
-
-
-
-
-

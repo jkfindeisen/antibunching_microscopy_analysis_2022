@@ -12,8 +12,6 @@ function s=cellsum(co,ct)
 % ct = cellfun(@(x) {rand(5,5)},num2cell(1:3));
 % s1=cellsum(co,ct);
 % s2=cellsum(ct); % here only sumup one level
-% 
-% Haisen Ta 20120611 @ goettingen
 
 assert(nargin>0 && nargin<3,'invalid number of inputs!');
 if nargin<2

@@ -2,7 +2,7 @@ function example_experimental_data_origami()
 % Analyses the experimental data for DNA origami
 
 close all;
-fprintf('Will analyze and show experiment DNA origami data. May take a while!\n');
+fprintf('Will analyze and show experiment DNA origami data. (Takes 1-2 minutes)\n');
 
 %% load confocal data
 load('data/origami_data_confocal_image_data.mat');

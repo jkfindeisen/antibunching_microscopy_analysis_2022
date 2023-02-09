@@ -1,6 +1,8 @@
 function example_filaments()
 % One test run with segmentation on simulated filaments.
 
+fprintf('statistical analysis on simulated filaments (takes ~10 minutes)\n');
+
 %% general parameters
 p = 0.02;
 params.md = 4; 

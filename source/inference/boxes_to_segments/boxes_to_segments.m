@@ -1,4 +1,4 @@
-function segments = boxes_to_segments(Y,Bnp,hset,pad,options)
+function [segments, boxes] = boxes_to_segments(Y,Bnp,hset,pad,options)
 % Converts boxes obtained by MISCAT to segments using the Watershed
 % segmentation algorithm to obtain more natural segments
 %

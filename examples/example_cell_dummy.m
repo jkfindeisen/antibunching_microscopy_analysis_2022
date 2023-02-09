@@ -85,7 +85,7 @@ params.lambda = lambda;
 params.a = 2; %matched by hand
 params.b = 0.031;
 t = tic();
-[segments, n, p, conf, aux] = estimate_molecular_map(data,params,Psi,alpha);
+[segments, n, p, conf, aux, boxes] = estimate_molecular_map(data,params,Psi,alpha);
 % "Making the segmentation valid......done!" - takes very long
 toc(t);
 
@@ -93,7 +93,7 @@ fig = figure();
 hold on;
 axis off;
 box on;
-seg = d.segmentation;
+seg = segments;
 Nseg = double(max(seg(:)));
 cm = jet(Nseg);
 for i = 1 : Nseg
@@ -110,11 +110,11 @@ fig = figure();
 hold on;
 axis off;
 box on;
-N = size(d.boxes, 1);
+N = size(boxes, 1);
 % sort boxes by area
-a = (diff(d.boxes(:, [1,3]), 1, 2) + 1) .* (diff(d.boxes(:, [2,4]), 1, 2) + 1);
+a = (diff(boxes(:, [1,3]), 1, 2) + 1) .* (diff(boxes(:, [2,4]), 1, 2) + 1);
 [a, ix] = sort(a, 'desc');
-boxes = d.boxes(ix, :);
+boxes = boxes(ix, :);
 a = sqrt(a); % we use the sqrt of the area as color indicator
 R = [min(a), max(a)];
 % cm = jet(1000);
@@ -146,7 +146,6 @@ exportgraphics(fig, 'cell_boxes.emf');
 % cm = jet(255);
 % cm(1, :) = [1,1,1];
 % imwrite(A, cm, 'cell_segmentation.png');
-%
 
 N = size(d.boxes, 1);
 A = zeros([size(d.segmentation), 3], 'uint8') + 255; % white at the beginning

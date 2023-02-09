@@ -6,7 +6,7 @@ function example_forward_simulations()
 % - Show results
 
 close all;
-fprintf('Simulating photon incidence images for various objects and imaging modes, can take a while!\n\n');
+fprintf('Simulating photon incidence images for various objects and imaging modes (takes 1-2 minutes)!\n\n');
 
 %% general parameters
 lambda = 0.01; 

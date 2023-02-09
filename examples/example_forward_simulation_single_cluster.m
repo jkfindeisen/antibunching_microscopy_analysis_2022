@@ -1,6 +1,8 @@
 function example_forward_simulation_single_cluster()
 % tests the forward simulations
 
+fprintf('data (forward) simulation of molecules in a single cluster (all at the same position)\n');
+
 % Set parameters
 lambda = 0.01;
 n = 10;

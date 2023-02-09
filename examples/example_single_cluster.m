@@ -2,7 +2,7 @@ function example_single_cluster()
 % analyses synthetic data, simulation of a single cluster
 
 close all;
-fprintf('Simulate and analyze single cluster data.\n');
+fprintf('Simulate and analyze single cluster data (takes < 1 minute).\n');
 
 %% simulation parameters
 lambda = 0.01;

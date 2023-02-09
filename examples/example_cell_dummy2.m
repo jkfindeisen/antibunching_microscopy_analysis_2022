@@ -1,6 +1,8 @@
 function example_cell_dummy2()
 % tests the cell example, only the analysis
 
+fprintf('Takes 10-20 minutes!\n')
+
 %% load cell example
 pattern = load('data/cell_dummy_object.mat');
 pattern = pattern.pattern;
@@ -72,8 +74,7 @@ params.lambda = lambda;
 params.a = 2; % matched by hand
 params.b = 0.031;
 t = tic();
-% [segments, n, p, conf, aux] = estimate_molecular_map(data,params,[],alpha);
-[segments, n, p, conf, aux] = estimate_molecular_map(data,params,Psi,alpha);
+[segments, n, p, conf] = estimate_molecular_map(data,params,Psi,alpha);
 % "Making the segmentation valid......done!" - takes very long
 toc(t);
 

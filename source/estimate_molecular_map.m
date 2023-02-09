@@ -1,4 +1,4 @@
-function [segments,n,p,conf,aux] = estimate_molecular_map(data,params,Psi,alpha)
+function [segments,n,p,conf,aux, boxes] = estimate_molecular_map(data,params,Psi,alpha)
 % Main function to estimate the molecular map from data
 %
 % INPUTS:
@@ -135,7 +135,7 @@ dist_params.bg = 0;
 Bnp = multiscale_test(padarray(max(S_STED{1},0),[pad_STED pad_STED]),Psi,dist_params,alpha/2); % Bonferroni adjustment
 
 %% Merge segmentation with estimated locations
-segments = boxes_to_segments(max(S_STED{1},0),Bnp,Psi.hset,pad_STED, params.segmentation);
+[segments, boxes] = boxes_to_segments(max(S_STED{1},0),Bnp,Psi.hset,pad_STED, params.segmentation);
 fprintf('...done!\n');
 
 %% Estimate number and brightness on each segment

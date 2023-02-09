@@ -26,3 +26,13 @@ Call examples/example_xxx.m to see the software estimating a hybrid segmentation
 ## Usage
 
 Make sure to run initialize.m at least once. 
+
+The main routine is source/estimate_molecular_map.m which by itself
+- performs a MISCAT segmentation test (source/miscat/*.m)
+- estimates the background (quite simple)
+- preprocesses the data (source/inference/preprocessing/preprocess_data.m)
+- merges MISCAT results with another segmentation method
+  (source/inference/boxes_to_segments/boxes_to_segments.m)
+- estimate n,p for every obtained segment including confidence intervals
+  (source\inference\estimate_np\estimate_np.m)
+
